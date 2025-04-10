@@ -12,6 +12,4 @@ class personas extends Model
 
     protected $fillable = ['Nombre','ap','am'];
 
-
-
 }
