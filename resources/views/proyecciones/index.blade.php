@@ -1,10 +1,10 @@
-@extends("layouts.app")
+@extends("layouts.asigna_cartelera")
 
 @section("content")
 <div class="row justify-content-center">
     <div class="col-8">
         <h1 class="alert alert-success">Proyecciones</h1>
-        <a href="{{route('proyecciones.create')}}" class="btn btn-success">Agregar Proyección</a>
+        <a href="{{route('proyecciones.create')}}" class="btn btn-success"><i class="fa-solid fa-plus"></i>Agregar Proyección</a>
     </div>
 </div>
 
@@ -34,11 +34,11 @@
                     <td>{{ $proyeccion->des_proy }}</td>
                     <td>{{ $proyeccion->precio }}</td>
                     <td>
-                        <a class="btn btn-warning" href="{{ route('proyecciones.edit', $proyeccion->id_proyeccion) }}">Editar</a>
+                        <a class="btn btn-warning" href="{{ route('proyecciones.edit', $proyeccion->id_proyeccion) }}"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
                         <form action="{{ route('proyecciones.destroy', $proyeccion->id_proyeccion) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger" type="submit">Eliminar</button>
+                            <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i>Eliminar</button>
                         </form>
                     </td>
                 </tr>

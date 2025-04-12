@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.asigna_cartelera')
 
 @section('content')
 <div class="container mt-4">

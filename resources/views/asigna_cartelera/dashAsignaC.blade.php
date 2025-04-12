@@ -10,10 +10,5 @@
             </a>
         </li>
     </ul>
-    <a href="{{ route('horas.index') }}" class="btn btn-secondary">Horas</a>
-    <a href="{{ route('proyecciones.index') }}" class="btn btn-secondary">Proyecciones</a>
-    <a href="{{ route('dias.index') }}" class="btn btn-secondary">Días</a>
-    <a href="{{ route('cines.index') }}" class="btn btn-secondary">Cines</a>
-    <a href="{{ route('peliculas.index') }}" class="btn btn-secondary">Películas</a>
 </div>
 @endsection

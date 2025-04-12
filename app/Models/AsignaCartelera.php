@@ -21,5 +21,6 @@ class AsignaCartelera extends Model
         'fi',
         'ff',
     ]; // Campos que se pueden asignar masivamente
+
 }
 

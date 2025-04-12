@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.peliculas')
 
 @section('content')
     <div class="row justify-content-center">

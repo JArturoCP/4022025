@@ -25,7 +25,5 @@ class Dia extends Model
     public $timestamps = false;
 
 
-
-
     
 }

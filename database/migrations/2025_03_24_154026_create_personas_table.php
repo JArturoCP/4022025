@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personas', function (Blueprint $table) {
-            $table->id('id_personas'); // Columna id_personas como clave primaria
-            $table->string('Nombre', 10); // Columna Nombre con longitud máxima de 10 caracteres
-            $table->string('ap', 10); // Columna apellido paterno con longitud máxima de 10 caracteres
-            $table->string('am', 10); // Columna apellido materno con longitud máxima de 10 caracteres
-            $table->softDeletes();
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('personas')) {
+            Schema::create('personas', function (Blueprint $table) {
+                $table->id('id_personas'); // Columna id_personas como clave primaria
+                $table->string('Nombre', 10); // Columna Nombre con longitud máxima de 10 caracteres
+                $table->string('ap', 10); // Columna apellido paterno
+                $table->string('am', 10); // Columna apellido materno
+                $table->softDeletes();
+                $table->timestamps();
+            });
+        }
     }
 
     /**

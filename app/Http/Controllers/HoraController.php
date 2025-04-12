@@ -12,7 +12,9 @@ class HoraController extends Controller
      */
     public function index()
     {
+
         $horas = Hora::all();
+        //dd(hora::all());
         return view('horas.index', compact('horas'));
     }
 

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.asigna_cartelera')
 
 @section('content')
     <div class="row justify-content-center">
@@ -11,7 +11,8 @@
         <div class="row justify-content-center">
             <div class="col-4">
                 <div class="alert alert-danger">
-                    <ul>                        @foreach ($errors->all() as $error)
+                    <ul>                       
+                        @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>

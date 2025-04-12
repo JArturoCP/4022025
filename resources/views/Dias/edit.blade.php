@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.asigna_cartelera')
 
 @section('content')
     <div class="max-w-lg mx-auto bg-blue-500 p-6 rounded-lg shadow-md mt-10">
