@@ -25,7 +25,7 @@ Route::resource('dias', App\Http\Controllers\DiaController::class);
 
 Route::resource('generos', App\Http\Controllers\GeneroController::class);
 
-Route::resource('director', App\Http\Controllers\DirectorController::class);
+Route::resource('directores', App\Http\Controllers\DirectorController::class);
 
 Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 
@@ -168,3 +168,7 @@ Route::get("dashAsignaC", function () {
 
     return view('asigna_cartelera.dashAsignaC');
 });
+use App\Http\Controllers\HorarioProyeccionController;
+
+Route::get('/proyecciones_horario/calendario', [HorarioProyeccionController::class, 'calendario'])->name('proyecciones_horario.calendario');
+Route::get('/proyecciones_horario/horario/{fecha}', [HorarioProyeccionController::class, 'horario'])->name('proyecciones_horario.horario');
