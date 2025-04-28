@@ -1,4 +1,4 @@
-@extends("layouts.peliculas")
+@extends("layouts.asigna_cartelera")
 
 @section("content")
     <div class="row justify-content-center">

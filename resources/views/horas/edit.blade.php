@@ -22,7 +22,7 @@
     @endif
     <div class="row justify-content-center mt-5">
         <div class="col-6">
-            <form action="{{ route('horas.update', $hora->id_horas) }}" method="POST">
+            <form action="{{ route('horas.update', $hora->id_hora) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
