@@ -34,7 +34,7 @@
                 @foreach($generos as $genero)
                 <tr>
                     <td class="" scope="row">{{$loop->index+1}}</t>
-                    <td class="">{{ $genero->nombre_genero }}</td>
+                    <td class="">{{ $genero->desc_gen }}</td>
                     <td class="text-center">
                         <a class="btn btn-warning me-2" href="{{ route('generos.edit', $genero->id_genero) }}">Editar</a>
                         <form action="{{ route('generos.destroy', $genero->id_genero) }}" method="POST" style="display:inline;">

@@ -12,6 +12,7 @@ class GeneroController extends Controller
     public function index()
     {
         $generos = Genero::all();
+        //dd($generos);
         return view('generos.index', compact('generos'));
     }
 
@@ -35,12 +36,27 @@ class GeneroController extends Controller
         return redirect()->route('generos.index')->with('success', 'Género creado correctamente');
     }
 
-    public function show(Genero $genero) {}
+
+    // Elimina un género de la base de datos
+    public function destroy(Genero $genero)
+    {
+        //dd($genero);
+
+        $genero->delete();
+        return redirect()->route('generos.index')->with('success', 'Genero borrado correctamente.');
+
+
+    }
+
+    public function show(Genero $genero) {
+
+    }
 
     public function edit(Genero $genero)
     {
 
         return view('generos.edit', compact('genero'));
+
     }
 
     public function update(Request $request, Genero $genero)
@@ -52,14 +68,5 @@ class GeneroController extends Controller
         $genero->update($request->all());
 
         return redirect()->route('generos.index')->with('success', 'Género actualizado correctamente');
-    }
-
-    public function destroy(Genero $genero)
-    {
-
-        $genero->delete();
-
-
-        return redirect()->route('generos.index')->with('success', 'Genero borrado correctamente.');
     }
 }

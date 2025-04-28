@@ -2,6 +2,9 @@
 
 @section('content')
 
+<<<<<<< HEAD
+             
+=======
 <div class="container-fluid bg-light">
     <div class="row min-vh-100">
         <!-- Contenido Principal -->
@@ -10,11 +13,41 @@
                 <h3 class="fw-bold text-dark">Peliculas</h3>
                 <input type="text" class="form-control w-25" placeholder="Buscar ...">
             </div>
+>>>>>>> a9328060f60ab3549355bd685081363ccfdc8cf4
 
 
 
             <div class="row mt-4">
                 @if(isset($peliculas) && $peliculas->count() > 0)
+<<<<<<< HEAD
+                    @foreach($peliculas as $pelicula)
+                        <div class="col-md-4">
+                            <div class="card mb-3" >
+                                <img src="..." class="card-img-top" alt="imagen">
+                                <div class="card-body">
+                                    <h3 class="card-title">{{$pelicula->titulo}}</h3>
+
+                                    <p class="card-text">
+                                        <ul>
+                                            <li>{{$pelicula->duracion}}</li>
+                                            <li>{{$pelicula->desc_gen}} </li>
+                                            <li>{{$pelicula->desc_idioma}}</li>
+                                            <li>{{$pelicula->nom}}</li>
+                                            <li>{{$pelicula->ap}}</li>
+                                            <li>{{$pelicula->am}}</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>  
+                    @endforeach
+                    
+                @else
+                        <p>No hay películas disponibles.</p>
+                @endif
+
+                </div>
+=======
                 @foreach($peliculas as $pelicula)
                 <div class="col-md-4">
                     <div class="card mb-3">
@@ -37,6 +70,7 @@
                 </div>
                 @endforeach
                 @endif
+>>>>>>> a9328060f60ab3549355bd685081363ccfdc8cf4
 
                 <!-- Tabla de últimos movimientos -->
                 <div class="row mt-4">
