@@ -41,7 +41,7 @@
                             <form action="{{ route('protagonistas.destroy', $protagonista->id_protagonista) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Eliminar</button>
+                                <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"> Eliminar</button>
                             </form>
                         </td>
                     </tr>
