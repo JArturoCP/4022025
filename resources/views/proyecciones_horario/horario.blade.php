@@ -13,7 +13,10 @@
             <tr>
                 <th>Horario</th>
                 <th>Película Asignada</th>
+                <th>Proyeccion</th>
+                <th>Clasificacion</th>
                 <th>Acciones</th>
+                
             </tr>
             </thead>
             <tbody>
@@ -29,11 +32,19 @@
                     <td class="bg-danger text-white">{{ $horario[0] }} - {{ $horario[1] }}</td>
                     <td>
                         {{-- Aquí deberías mostrar la película asignada si existe --}}
-                        <span id="pelicula_{{ $index }}">Sin asignar</span>
+                        <select name="id_pelicula">
+                        @foreach($peliculas as $pelicula)
+                         
+                               <option value="{{$pelicula->id_pelicula}}">{{$pelicula->titulo}}</option>
+                       
+                       @endforeach
+                        </select>
+                    </td>
+                    <td>
+                        
                     </td>
                     <td>
                         <button class="btn btn-success btn-sm" onclick="asignarPelicula({{ $index }})">Agregar</button>
-
                     </td>
                 </tr>
             @endforeach
