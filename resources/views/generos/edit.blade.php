@@ -12,12 +12,12 @@
 
     <div class="row justify-content-center">
         <div class="col-8 text-center m-3">
-            <label for="nombre_genero" class="fs-4 text-dark">Nombre del Género</label>
+            <label for="desc_gen" class="fs-4 text-dark">Nombre del Género</label>
         </div>
     </div>
     <div class="row justify-content-center">
         <div class="col-8 text-center m-3">
-            <input type="text" id="nombre_genero" name="nombre_genero" value="{{ old('nombre_genero', $genero->nombre_genero) }}" required class="text-center">
+            <input type="text" id="desc_gen" name="desc_gen" value="{{ old('desc_gen', $genero->nombre_genero) }}" required class="text-center">
         </div>
     </div>
     <div class="row justify-content-center">

@@ -15,7 +15,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/dashPeliculas', [DashPeliculasController::class, 'index'])->name('peliculasViews.dashPeliculas');
+Route::get('/dashPeliculas', [App\Http\Controllers\PeliculaController::class, 'index'])->name('peliculasViews.dashPeliculas');
 
 
 Route::resource('ciudad', App\Http\Controllers\CiudadController::class);
@@ -25,7 +25,7 @@ Route::resource('dias', App\Http\Controllers\DiaController::class);
 
 Route::resource('generos', App\Http\Controllers\GeneroController::class);
 
-Route::resource('directores', App\Http\Controllers\DirectorController::class);
+Route::resource('director', App\Http\Controllers\DirectorController::class);
 
 Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 
@@ -157,9 +157,7 @@ Route::get("dashAsignaC", function () {
     return view('asigna_cartelera.dashAsignaC');
 });
 
-Route::get("dashPeliculas", function () {
-    return view('peliculasViews.dashPeliculas');
-})->name('peliculasViews.dashPeliculas');
+
 
 
 Route::get("dashAsignaC", function () {
