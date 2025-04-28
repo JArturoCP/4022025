@@ -30,11 +30,11 @@ class PersonasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'Nombre' => 'required|max:10',
+            'nombre' => 'required|max:10',
             'ap' => 'required|max:10',
             'am' => 'required|max:10',
         ],[],[
-            'Nombre' => 'nombre',
+            'nombre' => 'nombre',
             'ap' => 'apellido paterno',
             'am' => 'apellido materno',
         ]);
@@ -65,11 +65,11 @@ class PersonasController extends Controller
     public function update(Request $request, personas $persona)
     {
         $request->validate([
-            'Nombre' => 'required|max:10',
+            'nombre' => 'required|max:10',
             'ap' => 'required|max:10',
             'am' => 'required|max:10',
         ],[],[
-            'Nombre' => 'nombre',
+            'nombre' => 'nombre',
             'ap' => 'apellido paterno',
             'am' => 'apellido materno',
         ]);

@@ -10,8 +10,8 @@ class Proyeccion extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'proyecciones'; 
-    protected $primaryKey = 'id_proyeccion'; 
-    public $timestamps = false; 
+    protected $table = 'proyecciones';
+    protected $primaryKey = 'id_proyeccion';
+    public $timestamps = false;
     protected $fillable = ['des_proy', 'precio'];
 }

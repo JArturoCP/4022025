@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cine;
 use App\Models\Horario_proyeccion;
 use App\Models\Pelicula;
+use App\Models\Proyeccion;
 use Illuminate\Http\Request;
 
 class HorarioProyeccionController extends Controller
@@ -19,7 +21,11 @@ class HorarioProyeccionController extends Controller
     public function horario($fecha)
     {
         $peliculas = Pelicula::all();
-        return view('proyecciones_horario.horario', compact('fecha', 'peliculas'));
+        $cines = Cine::all();
+        $proyecciones = Proyeccion::all();
+        return view('proyecciones_horario.horario', compact('fecha', 'peliculas', 'cines', 'proyecciones'));
+
+
     }
     public function index()
     {

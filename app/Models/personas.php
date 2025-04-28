@@ -10,6 +10,6 @@ class personas extends Model
     protected $table = 'personas';
     protected $primaryKey = 'id_persona';
 
-    protected $fillable = ['Nombre','ap','am'];
+    protected $fillable = ['nombre','ap','am'];
 
 }

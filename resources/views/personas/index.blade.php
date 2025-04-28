@@ -1,4 +1,4 @@
-@extends("layouts.peliculas")
+@extends("layouts.asigna_cartelera")
 
 @section("content")
     <div class="row justify-content-center">
@@ -32,7 +32,7 @@
                 @foreach($personas as $persona)
                     <tr>
                         <td>{{$loop->index+1}}</td>
-                        <td>{{ $persona->Nombre }}</td>
+                        <td>{{ $persona->nombre }}</td>
                         <td>{{ $persona->ap }}</td>
                         <td>{{ $persona->am }}</td>
                         
