@@ -32,7 +32,7 @@
                 @foreach($personas as $persona)
                     <tr>
                         <td>{{$loop->index+1}}</td>
-                        <td>{{ $persona->Nombre }}</td>
+                        <td>{{ $persona->nombre }}</td>
                         <td>{{ $persona->ap }}</td>
                         <td>{{ $persona->am }}</td>
                         

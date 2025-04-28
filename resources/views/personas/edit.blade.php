@@ -24,7 +24,7 @@
                 @method('PUT')
                 <div class="mb-3">
                     <label for="Nombre" class="form-label">Nombre de la persona</label>
-                    <input type="text" class="form-control" id="Nombre" name="Nombre" value="{{ $persona->Nombre }}" required>
+                    <input type="text" class="form-control" id="Nombre" name="Nombre" value="{{ $persona->nombre }}" required>
                     <label for="ap" class="form-label">Apellido paterno</label>
                     <input type="text" class="form-control" id="ap" name="ap" value="{{ $persona->ap }}" required>
                     <label for="am" class="form-label">Apellido materno</label>

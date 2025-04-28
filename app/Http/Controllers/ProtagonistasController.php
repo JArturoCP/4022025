@@ -14,8 +14,8 @@ class ProtagonistasController extends Controller
     {
 
 
-        $protagonistas = Protagonistas::join('personas', 'personas.id_personas', '=', 'protagonista.id_personas')
-            ->select('personas.nom', 'personas.ap', 'personas.am', 'protagonista.id_protagonista')
+        $protagonistas = Protagonistas::join('personas', 'personas.id_personas', '=', 'protagonistas.id_personas')
+            ->select('personas.nombre', 'personas.ap', 'personas.am', 'protagonistas.id_protagonista')
             ->take(2)
             ->get();
 
