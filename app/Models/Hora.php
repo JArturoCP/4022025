@@ -9,6 +9,6 @@ class Hora extends Model
 {
     use softDeletes;
     protected $table = 'horas';
-    protected $primaryKey = 'id_horas';
+    protected $primaryKey = 'id_hora';
     protected $fillable = ['descripcion_h'];
 }
