@@ -11,7 +11,7 @@
                     <input type="text" class="form-control w-25" placeholder="Buscar ...">
                 </div>
 
-                
+             
 
                 <div class="row mt-4">
                 @if(isset($peliculas) && $peliculas->count() > 0)
@@ -36,7 +36,12 @@
                             </div>
                         </div>  
                     @endforeach
+                    
+                @else
+                        <p>No hay películas disponibles.</p>
+                @endif
 
+                </div>
 
                 <!-- Tabla de últimos movimientos -->
                 <div class="row mt-4">

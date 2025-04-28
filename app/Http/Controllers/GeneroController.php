@@ -14,6 +14,7 @@ class GeneroController extends Controller
     public function index()
     {
         $generos = Genero::all();
+        //dd($generos);
         return view('generos.index', compact('generos'));
     }
 
@@ -40,14 +41,11 @@ class GeneroController extends Controller
     }
 
     // Elimina un género de la base de datos
-    public function destroy($id_genero)
+    public function destroy(Genero $genero)
     {
-        $genero = Genero::findOrFail($id_genero);
-        $genero->delete();  // Elimina el género
+        //dd($genero);
 
-        // Restablecer el auto-incremento
-        DB::statement('ALTER TABLE generos AUTO_INCREMENT = 1');
-
+        $genero->delete();
         return redirect()->route('generos.index')->with('success', 'Genero borrado correctamente.');
     }
 
