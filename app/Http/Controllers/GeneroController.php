@@ -5,12 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Genero;
 use Illuminate\Http\Request;
 
-
-
 class GeneroController extends Controller
 {
 
-    // Muestra todos los géneros
+
     public function index()
     {
         $generos = Genero::all();
@@ -18,27 +16,26 @@ class GeneroController extends Controller
         return view('generos.index', compact('generos'));
     }
 
-    // Muestra el formulario de creación
+
     public function create()
     {
         return view('generos.create');
     }
 
-    // Guarda un nuevo género en la base de datos
+
     public function store(Request $request)
     {
-        // Validación de datos
+
         $request->validate([
             'nombre_genero' => 'required|string|max:100'
+        ], [], [
+            'nombre_genero' => 'Nombre del genero',
         ]);
 
-        // Creación del género
-        Genero::create([
-            'nombre_genero' => $request->nombre_genero
-        ]);
-
+        Genero::create($request->all());
         return redirect()->route('generos.index')->with('success', 'Género creado correctamente');
     }
+
 
     // Elimina un género de la base de datos
     public function destroy(Genero $genero)
@@ -47,26 +44,28 @@ class GeneroController extends Controller
 
         $genero->delete();
         return redirect()->route('generos.index')->with('success', 'Genero borrado correctamente.');
+
+
     }
 
-    // Modificar
+    public function show(Genero $genero) {
 
-    public function edit($id_genero)
+    }
+
+    public function edit(Genero $genero)
     {
-        $genero = Genero::findOrFail($id_genero);  // Buscar el género por su ID
-        return view('generos.edit', compact('genero'));  // Pasamos el género a la vista edit
+
+        return view('generos.edit', compact('genero'));
+
     }
 
-
-    public function update(Request $request, $id_genero)
+    public function update(Request $request, Genero $genero)
     {
         $request->validate([
             'nombre_genero' => 'required|string|max:100'
         ]);
 
-        $genero = Genero::findOrFail($id_genero);  // Buscar el género por ID
-        $genero->nombre_genero = $request->nombre_genero;  // Actualizar el nombre del género
-        $genero->save();  // Guardar los cambios
+        $genero->update($request->all());
 
         return redirect()->route('generos.index')->with('success', 'Género actualizado correctamente');
     }

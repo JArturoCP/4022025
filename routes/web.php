@@ -158,8 +158,7 @@ Route::get("dashAsignaC", function () {
 });
 
 Route::get("dashPeliculas", function () {
-   return view('peliculasViews.dashPeliculas');
-
+    return view('peliculasViews.dashPeliculas');
 })->name('peliculasViews.dashPeliculas');
 
 
@@ -169,3 +168,7 @@ Route::get("dashAsignaC", function () {
 
     return view('asigna_cartelera.dashAsignaC');
 });
+use App\Http\Controllers\HorarioProyeccionController;
+
+Route::get('/proyecciones_horario/calendario', [HorarioProyeccionController::class, 'calendario'])->name('proyecciones_horario.calendario');
+Route::get('/proyecciones_horario/horario/{fecha}', [HorarioProyeccionController::class, 'horario'])->name('proyecciones_horario.horario');

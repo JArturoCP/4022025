@@ -1,35 +1,53 @@
 @extends('layouts.asigna_cartelera')
 
 @section('content')
-<div class="container mt-4">
-    <h1 class="text-primary">Lista de Días</h1>
+    <div class="row justify-content-center">
+        <div class="col-8 text-center">
+            <h1 class="alert alert-success">Días</h1>
+        </div>
+    </div>
 
-    <a href="{{ route('dias.create') }}" class="btn btn-success mb-3">Agregar Día</a>
+    <div class="row justify-content-center">
+        <div class="col-8 text-center">
+            <a href="{{ route('dias.create') }}" class="btn btn-success">Agregar Día</a>
+        </div>
+    </div>
 
-    <div class="list-group">
-        @foreach ($dias as $dia)
-        <div class="list-group-item d-flex justify-content-between align-items-center">
-            <span class="text-dark">{{ $dia->desc_dia }}</span>
-
-            <div class="btn-group">
-                <a href="{{ route('dias.edit', $dia->id_dia) }}" class="btn btn-warning btn-sm">Editar</a>
-
-                <form action="{{ route('dias.destroy', $dia->id_dia) }}" method="POST" style="display:inline;">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                </form>
-
-
+    @if(session('success'))
+        <div class="row justify-content-center mt-3">
+            <div class="col-4 text-center">
+                <p class="alert alert-success">{{ session('success') }}</p>
             </div>
         </div>
-        @endforeach
+    @endif
 
-
-
-
+    <div class="row justify-content-center mt-5">
+        <div class="col-8">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th scope="col" class="bg-success-subtle">Id_Día</th>
+                    <th scope="col" class="bg-success-subtle">Descripción</th>
+                    <th scope="col" class="bg-success-subtle text-center">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($dias as $dia)
+                    <tr>
+                        <td scope="row">{{ $loop->index + 1 }}</td>
+                        <td>{{ $dia->desc_dia }}</td>
+                        <td class="text-center">
+                            <a class="btn btn-warning me-2" href="{{ route('dias.edit', $dia->id_dia) }}">Editar</a>
+                            <form action="{{ route('dias.destroy', $dia->id_dia) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 @endsection
-
-<!-- ESTE CODIGO ES DE DIA -->

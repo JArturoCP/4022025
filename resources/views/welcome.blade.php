@@ -10,9 +10,13 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+    
+=======
     <div class="container py-4 px-3 mx-auto">
         <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
             @if (Route::has('login'))
+>>>>>>> 77530fdd7bcc04680dc3048073ba3c6c46faab1f
 
             @auth
             <a

@@ -41,6 +41,11 @@
                         <i class="fa-solid fa-video ms-4"></i> Proyecciones
                     </a>
                 </li>
+                <li class="nav-item py-2 {{ Request::is('proyecciones_horario*') ? 'bg-primary rounded' : '' }}">
+                    <a href="{{ route('proyecciones_horario.calendario') }}" class="text-decoration-none fw-bold text-white d-flex align-items-center gap-4">
+                        <i class="fa-solid fa-video ms-4"></i> Horario proyecciones
+                    </a>
+                </li>
                 <li class="nav-item py-2 {{ Request::is('dias*') ? 'bg-primary rounded' : '' }}">
                     <a href="{{ route('dias.index') }}" class="text-decoration-none fw-bold text-white d-flex align-items-center gap-4">
                         <i class="fa-solid fa-calendar-day ms-4"></i> Días

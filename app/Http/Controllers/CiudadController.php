@@ -35,12 +35,11 @@ class CiudadController extends Controller
     {
         $request->validate([
             'nombre_ci' => 'required|max:10',
-        ],[],[
+        ], [], [
             'nombre_ci' => 'Nombre de la ciudad',
         ]);
         Ciudad::create($request->all());
         return redirect()->route('ciudad.index')->with('success', 'Ciudad creada correctamente.');
-
     }
 
     /**
@@ -56,7 +55,7 @@ class CiudadController extends Controller
      */
     public function edit(Ciudad $ciudad)
     {
-        return view("ciudades.edit",compact('ciudad'));
+        return view("ciudades.edit", compact('ciudad'));
     }
 
     /**
@@ -66,7 +65,7 @@ class CiudadController extends Controller
     {
         $request->validate([
             'nombre_ci' => 'required|max:10',
-        ],[],[
+        ], [], [
             'nombre_ci' => 'Nombre de la ciudad',
         ]);
 
@@ -74,12 +73,9 @@ class CiudadController extends Controller
         $ciudad->update($request->all());
 
         return redirect()->route('ciudad.index')->with('success', 'Ciudad editada correctamente.');
-
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(Ciudad $ciudad)
     {
         $ciudad->delete();

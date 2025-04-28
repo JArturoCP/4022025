@@ -10,8 +10,7 @@ class Director extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'directores'; // 👈 esto corrige el error
-
+    protected $table = 'directores';
     protected $primaryKey = 'id_director';
     protected $fillable = ['nombre_director'];
 }

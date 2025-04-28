@@ -28,7 +28,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($proyeccion as $proyeccion)
+            @foreach($proyecciones as $proyeccion)
                 <tr>
                     <td>{{$loop->index+1}}</td>
                     <td>{{ $proyeccion->des_proy }}</td>

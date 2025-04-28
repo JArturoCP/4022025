@@ -89,7 +89,7 @@ class AsignaCarteleraController extends Controller
     {
         // Buscar el registro a editar
         $asignaCartelera = AsignaCartelera::findOrFail($id);
-        
+
         // Cargar datos necesarios
         $peliculas = Pelicula::all();
         $cines = Cine::all();

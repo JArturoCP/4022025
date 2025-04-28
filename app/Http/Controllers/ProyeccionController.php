@@ -12,8 +12,8 @@ class ProyeccionController extends Controller
      */
     public function index()
     {
-        $proyeccion = Proyeccion::all(); // Obtén todas las proyecciones
-        return view('proyecciones.index', compact('proyeccion'));
+        $proyecciones = Proyeccion::all(); // Obtén todas las proyecciones
+        return view('proyecciones.index', compact('proyecciones'));
     }
 
     /**
@@ -33,11 +33,11 @@ class ProyeccionController extends Controller
             'des_proy' => 'required|string|max:200',
             'precio' => 'required|numeric',
         ]);
-        
+
         Proyeccion::create($request->all());
-        
+
         return redirect()->route('proyecciones.index')->with('success', 'Proyección agregada correctamente.');
-        
+
     }
 
     /**
@@ -84,16 +84,16 @@ class ProyeccionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy($id_proyeccion)
     {
         // Encontramos la proyección por su ID
-    $proyeccion = Proyeccion::find($id);
-    
+    $proyeccion = Proyeccion::find($id_proyeccion);
+
     // Verificamos si la proyección existe
     if ($proyeccion) {
         // Eliminamos el registro
         $proyeccion->delete();
-        
+
         // Redirigimos con un mensaje de éxito
         return redirect()->route('proyecciones.index')->with('success', 'Proyección eliminada correctamente.');
     }
