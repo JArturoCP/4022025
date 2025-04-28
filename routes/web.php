@@ -25,7 +25,7 @@ Route::resource('dias', App\Http\Controllers\DiaController::class);
 
 Route::resource('generos', App\Http\Controllers\GeneroController::class);
 
-Route::resource('directores', App\Http\Controllers\DirectorController::class);
+Route::resource('director', App\Http\Controllers\DirectorController::class);
 
 Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 

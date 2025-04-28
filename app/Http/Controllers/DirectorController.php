@@ -13,8 +13,10 @@ class DirectorController extends Controller
     public function index()
     {
         //
-        $directores = Director::all();
+        $directores = Director::join('personas','directores.id_persona', '=', 'personas.id_personas')
+        ->get();
         // dd($ciudades);
+
 
         return view('directores.index', compact('directores'));
     }
