@@ -3,19 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cine;
+use App\Models\Ciudad;
 use Illuminate\Http\Request;
 
 class CineController extends Controller
 {
     public function index()
     {
-        $cine = Cine::all();
-        return view('cines.index', compact('cine'));
+
+        $cines = Cine::join('ciudades', 'ciudades.id_ciudad', '=', 'cines.id_ciudad')
+            ->get();
+        return view('cines.index', compact('cines'));
     }
 
     public function create()
     {
-        return view('cines.create');
+        $ciudades= Ciudad::all();
+        return view('cines.create',compact('ciudades'));
     }
 
     public function store(Request $request)
@@ -32,10 +36,10 @@ class CineController extends Controller
             ->with('success', 'Cine creado correctamente.');
     }
 
-    public function edit($id)
+    public function edit(Cine $cine)
     {
-        $cine = Cine::findOrFail($id);
-        return view('cines.edit', compact('cine'));
+        $ciudades = Ciudad::all();
+        return view('cines.edit', compact('cine','ciudades'));
     }
 
     public function update(Request $request, $id)
