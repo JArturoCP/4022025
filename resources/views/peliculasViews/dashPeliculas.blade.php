@@ -26,7 +26,7 @@
                                             <li>{{$pelicula->duracion}}</li>
                                             <li>{{$pelicula->desc_gen}} </li>
                                             <li>{{$pelicula->desc_idioma}}</li>
-                                            <li>{{$pelicula->nom}}</li>
+                                            <li>{{$pelicula->nombre}}</li>
                                             <li>{{$pelicula->ap}}</li>
                                             <li>{{$pelicula->am}}</li>
                                         </ul>
