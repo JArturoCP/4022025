@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.asigna_cartelera')
 
 @section('content')
     <div class="container py-5">
@@ -33,15 +33,27 @@
                     <td>
                         {{-- Aquí deberías mostrar la película asignada si existe --}}
                         <select name="id_pelicula">
-                        @foreach($peliculas as $pelicula)
-                         
-                               <option value="{{$pelicula->id_pelicula}}">{{$pelicula->titulo}}</option>
-                       
-                       @endforeach
+                            <option value="" selected disabled>Seleccionar</option>
+                            @foreach($peliculas as $pelicula)
+                                <option value="{{$pelicula->id_pelicula}}">{{$pelicula->titulo}}</option>
+                            @endforeach
                         </select>
                     </td>
                     <td>
-                        
+                        <select name="id_proyeccion">
+                            <option value="" selected disabled>Seleccionar</option>
+                            @foreach($proyecciones as $proyeccion)
+                                <option value="{{$proyeccion->id_proyeccion}}">{{$proyeccion->desc_proy}}</option>
+                            @endforeach
+                        </select>
+                    </td>
+                    <td>
+                        <select name="id_clasificacion" required>
+                            <option value="" selected disabled>Seleccionar</option>
+                            @foreach($clasificaciones as $clasificacion)
+                                <option value="{{$clasificacion->id_clasificacion}}">{{$clasificacion->nom_clasifi}}</option>
+                            @endforeach
+                        </select>
                     </td>
                     <td>
                         <button class="btn btn-success btn-sm" onclick="asignarPelicula({{ $index }})">Agregar</button>
@@ -50,6 +62,4 @@
             @endforeach
             </tbody>
         </table>
-
-
 @endsection
