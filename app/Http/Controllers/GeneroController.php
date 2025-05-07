@@ -27,9 +27,9 @@ class GeneroController extends Controller
     {
 
         $request->validate([
-            'nombre_genero' => 'required|string|max:100'
+            'desc_gen' => 'required|string|max:100'
         ], [], [
-            'nombre_genero' => 'Nombre del genero',
+            'desc_gen' => 'Nombre del genero',
         ]);
 
         Genero::create($request->all());
@@ -62,7 +62,7 @@ class GeneroController extends Controller
     public function update(Request $request, Genero $genero)
     {
         $request->validate([
-            'nombre_genero' => 'required|string|max:100'
+            'desc_gen' => 'required|string|max:100'
         ]);
 
         $genero->update($request->all());

@@ -10,10 +10,10 @@
     @csrf
 
     <div class="row justify-content-center">
-        <div class="col-6 text-center m-3"><label for="nombre_genero" class="fs-4 text-dark ">Nombre del Género</label></div>
+        <div class="col-6 text-center m-3"><label for="desc_gen" class="fs-4 text-dark ">Nombre del Género</label></div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-6 text-center m-3"><input type="text" name="nombre_genero" required></div>
+        <div class="col-6 text-center m-3"><input type="text" name="desc_gen" required></div>
     </div>
     <div class="row justify-content-center">
         <div class="col-6 text-center m-3"><button type="submit" class="btn btn-success">Guardar</button></div>

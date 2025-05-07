@@ -26,14 +26,19 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nombre del director</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido paterno</th>
+                    <th scope="col">Apellido materno</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 @foreach($directores as $director)
                 <tr>
                     <th scope="row">{{$loop->index+1}}</th>
-                    <td>{{ $director->nombre_director }}</td>
+                    <td>{{ $director->nombre }}</td>
+                    <td>{{ $director->ap }}</td>
+                    <td>{{ $director->am}}</td>
                     <td>
                         <a class="btn btn-warning" href="{{ route('director.edit', $director->id_director) }}">Editar</a>
                         <form action="{{ route('director.destroy', $director->id_director) }}" method="POST" style="display:inline;">

@@ -1,4 +1,4 @@
-@extends("layouts.peliculas")
+@extends("layouts.asigna_cartelera")
 
 @section("content")
     <div class="row justify-content-center">
@@ -32,7 +32,7 @@
                 @foreach($personas as $persona)
                     <tr>
                         <td>{{$loop->index+1}}</td>
-                        <td>{{ $persona->Nombre }}</td>
+                        <td>{{ $persona->nombre }}</td>
                         <td>{{ $persona->ap }}</td>
                         <td>{{ $persona->am }}</td>
                         
@@ -41,7 +41,7 @@
                             <form action="{{ route('personas.destroy', $persona->id_personas) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit">Eliminar</button>
+                                <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"> Eliminar </button>
                             </form>
                         </td>
                     </tr>

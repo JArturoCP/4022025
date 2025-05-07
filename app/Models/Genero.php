@@ -12,5 +12,5 @@ class Genero extends Model
 
     protected $table = 'generos'; // Nombre de la tabla
     protected $primaryKey = 'id_genero'; // Clave primaria
-    protected $fillable = ['nombre_genero']; // Campos permitidos para asignación masiva
+    protected $fillable = ['desc_gen']; // Campos permitidos para asignación masiva
 }

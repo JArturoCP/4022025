@@ -41,7 +41,7 @@ class HoraController extends Controller
             'descripcion_h' => $request->descripcion_h
         ]);
 
-        return redirect()->route('horas.index')->with('success', 'horario creado correctamente');
+        return redirect()->route('horas.index')->with('success', 'Horario creado correctamente');
     }
 
     /**

@@ -62,6 +62,16 @@
                         <i class="fa-solid fa-film ms-4"></i> Películas
                     </a>
                 </li>
+                <li class="nav-item py-2 {{ Request::is('personas*') ? 'bg-primary rounded' : '' }}">
+                    <a href="{{ route('personas.index') }}" class="text-decoration-none fw-bold text-white d-flex align-items-center gap-4">
+                        <i class="fa-solid fa-user ms-4"></i> Personas
+                    </a>
+                </li>
+                <li class="nav-item py-2 {{ Request::is('protagonistas*') ? 'bg-primary rounded' : '' }}">
+                    <a href="{{ route('protagonistas.index') }}" class="text-decoration-none fw-bold text-white d-flex align-items-center gap-4">
+                        <i class="fa-solid fa-user ms-4"></i> Protagonistas
+                    </a>
+                </li>
             </ul>
 
             <div class="mt-auto">
