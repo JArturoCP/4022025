@@ -8,7 +8,7 @@ class personas extends Model
 {
     use SoftDeletes;
     protected $table = 'personas';
-    protected $primaryKey = 'id_persona';
+    protected $primaryKey = 'id_personas';
 
     protected $fillable = ['nombre','ap','am'];
 

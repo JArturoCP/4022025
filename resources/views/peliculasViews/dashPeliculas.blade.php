@@ -10,9 +10,16 @@
                 <h3 class="fw-bold text-dark">Peliculas</h3>
                 <input type="text" class="form-control w-25" placeholder="Buscar ...">
             </div>
+<<<<<<< HEAD
             
             <div class="row mt-4">
                 @if(isset($peliculas) && $peliculas->count() > 0)
+=======
+
+            <div class="row mt-4">
+                @if(isset($peliculas) && $peliculas->count() > 0)
+
+>>>>>>> 41b040008180c17369b4bb14d9540fe2ac75e1c0
                     @foreach($peliculas as $pelicula)
                         <div class="col-md-4">
                             <div class="card mb-3" >
@@ -21,17 +28,18 @@
                                     <h3 class="card-title">{{$pelicula->titulo}}</h3>
 
                                     <p class="card-text">
-                                        <ul>
-                                            <li>{{$pelicula->duracion}}</li>
-                                            <li>{{$pelicula->desc_gen}} </li>
-                                            <li>{{$pelicula->desc_idioma}}</li>
-                                            <li>{{$pelicula->nom}}</li>
-                                            <li>{{$pelicula->ap}}</li>
-                                            <li>{{$pelicula->am}}</li>
-                                        </ul>
+                                    <ul>
+                                        <li>{{$pelicula->duracion}}</li>
+                                        <li>{{$pelicula->desc_gen}} </li>
+                                        <li>{{$pelicula->desc_idioma}}</li>
+                                        <li>{{$pelicula->nom}}</li>
+                                        <li>{{$pelicula->ap}}</li>
+                                        <li>{{$pelicula->am}}</li>
+                                    </ul>
                                     </p>
                                 </div>
                             </div>
+<<<<<<< HEAD
                         </div>  
                     @endforeach
                     
@@ -42,10 +50,17 @@
                 </div>
 
 
+=======
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+            
+>>>>>>> 41b040008180c17369b4bb14d9540fe2ac75e1c0
                 <!-- Tabla de últimos movimientos -->
-                <div class="row mt-4">
-                    <div class="col-md-12">
-                        <div class="card p-3 ">
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="card p-3 ">
                             <h5 class="fw-bold">Proyecciones</h5>
                             <table class="table table-striped">
                                 <thead>

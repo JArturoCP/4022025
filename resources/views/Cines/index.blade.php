@@ -19,16 +19,19 @@
                 <th>Nombre</th>
                 <th>Dirección</th>
                 <th>Teléfono</th>
+                <th>Ciudad</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($cine as $cine)
+            @foreach($cines as $cine)
             <tr>
                 <td>{{ $cine->id_cine }}</td>
                 <td>{{ $cine->nombre_c }}</td>
                 <td>{{ $cine->dir }}</td>
                 <td>{{ $cine->tel }}</td>
+                <td>{{ $cine->nombre_ci }} 
+                </td>
                 <td>
                     <a href="{{ route('cine.edit', $cine->id_cine) }}" class="btn btn-warning">Editar</a>
                     <form action="{{ route('cine.destroy', $cine->id_cine) }}" method="POST" style="display: inline;">
@@ -39,6 +42,7 @@
                 </td>
             </tr>
             @endforeach
+           
         </tbody>
     </table>
 @endsection

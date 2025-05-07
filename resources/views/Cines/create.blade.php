@@ -22,7 +22,20 @@
             <label for="tel">Teléfono:</label>
             <input type="text" class="form-control" id="tel" name="tel" required>
         </div>
+        <div class="form-group">
+            <label for="id_ciudad">Ciudad</label>
+        </div>
+        <div>    
+           <select name="id_ciudad">
+               <option value="" selected disabled>Selecciona</option>
+               @foreach($ciudades as $ciudad) 
+                   <option value="{{$ciudad ->id_ciudad}}">{{$ciudad->nombre_ci}}</option>
+               @endforeach
+           </select>
+        </div>
+        <div class="p-4">
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
         
-        <button type="submit" class="btn btn-success">Guardar</button>
     </form>
 @endsection

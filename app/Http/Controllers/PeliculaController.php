@@ -16,14 +16,10 @@ class PeliculaController extends Controller
             ->join('genero', 'genero.id_genero', '=', 'peliculas.id_genero')
             ->join('idioma', 'idioma.id_idioma', '=', 'peliculas.id_idioma')
             ->join('directores', 'directores.id_director', '=', 'peliculas.id_director')
-
             ->join('personas', 'personas.id_personas', '=', 'directores.id_persona') // Corregido el campo id_personas
-            ->select('peliculas.*', 'generos.desc_gen', 'idioma.desc_idioma', 'personas.Nombre', 'personas.ap', 'personas.am')
-
-            ->join('personas', 'personas.id_persona', '=', 'directores.id_persona') // Corregido el campo id_personas
-            ->select('peliculas.*', 'genero.desc_gen', 'idioma.desc_idioma', 'personas.Nombre', 'personas.ap', 'personas.am')
+            ->select('peliculas.*', 'genero.desc_gen', 'idioma.desc_idioma', 'personas.nombre', 'personas.ap', 'personas.am')
             ->get();
-
+        //dd($peliculas);
         return view('peliculasViews.dashPeliculas', compact('peliculas'));
     }
 
