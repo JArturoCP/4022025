@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CineStar ⭐ | Inicio</title>
+    <title>🎬 CineStar ⭐ | Inicio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -76,7 +76,7 @@
           </select>
           <button class="btn btn-outline-light" type="submit">🔍</button>
         </form>
-        <button class="btn btn-outline-light">👤</button>
+        <a href="{{ route('login') }}" class="btn btn-outline-light">👤</a>
       </div>
     </div>
   </nav>
@@ -90,7 +90,8 @@
 
                 <!-- Imagen -->
                 <div class="col-md-6 text-center mb-4 mb-md-0">
-                    <img src="img/mine.jpg" alt="Poster" class="movie-image">
+                    <img src="img/forma.jpg" alt="Poster" class="movie-image">
+                    <p class="text-light mt-3">LA FORMA DEL AGUA.</p>
                     <p class="text-light mt-3">SOLO EN CINES</p>
                     <a href="#" class="btn btn-outline-light">COMPRAR TUS BOLETOS AQUÍ</a>
                 </div>
@@ -100,23 +101,23 @@
                     <div id="infoCarrusel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <h2>Duna: Parte Dos</h2>
-                                <p>Paul Atreides une fuerzas con los Fremen en su camino hacia la venganza contra los conspiradores.</p>
+                                <h2>La Forma Del Agua</h2>
+                                <p>Una mujer muda se enamora de una criatura acuática en un laboratorio secreto.</p>
                                 <button class="btn btn-light">Adquirir entradas</button>
                             </div>
                             <div class="carousel-item">
-                                <h2>Kung Fu Panda 4</h2>
-                                <p>Po emprende una nueva aventura llena de acción, humor y sabiduría ancestral.</p>
+                                <h2>Duro De Matar</h2>
+                                <p>Un policía enfrenta terroristas en un edificio para salvar a su esposa y detenerlos.</p>
                                 <button class="btn btn-light">Adquirir entradas</button>
                             </div>
                             <div class="carousel-item">
-                                <h2>Godzilla x Kong: The New Empire</h2>
+                                <h2>The Martian</h2>
                                 <p>Los titanes se unen contra una amenaza colosal que cambiará todo lo que conocían.</p>
                                 <button class="btn btn-light">Adquirir entradas</button>
                             </div>
                             <div class="carousel-item">
-                                <h2>Ghostbusters: Apocalipsis Fantasma</h2>
-                                <p>La nueva generación de Cazafantasmas enfrenta el mayor reto paranormal hasta ahora.</p>
+                                <h2>Sin Novedad En El Frente</h2>
+                                <p>Un joven soldado alemán enfrenta el horror y la deshumanización de la guerra.</p>
                                 <button class="btn btn-light">Adquirir entradas</button>
                             </div>
                         </div>
@@ -142,11 +143,11 @@
 
             <div class="col">
                 <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/blanca.jpeg" class="card-img-top" alt="Blanca Nieves">
+                    <img src="img/duro.jpeg" class="card-img-top" alt="Blanca Nieves">
                     <div class="card-body">
-                        <span class="badge bg-success">A</span> 109 min
+                    <span class="badge bg-warning text-dark">B15</span> 150 min
                         <span class="badge bg-primary float-end">Estreno</span>
-                        <h6 class="mt-2 mb-1 fw-bold">Blanca Nieves</h6>
+                        <h6 class="mt-2 mb-1 fw-bold">Duro de matar</h6>
                         <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
                     </div>
                 </div>
@@ -154,11 +155,11 @@
 
             <div class="col">
                 <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/mine.jpg" class="card-img-top" alt="Minecraft">
+                    <img src="img/forma.jpg" class="card-img-top" alt="Minecraft">
                     <div class="card-body">
-                        <span class="badge bg-secondary">TBC</span> 101 min
+                        <span class="badge bg-secondary">TBC</span> 180 min
                         <span class="badge bg-info float-end">Preventa</span>
-                        <h6 class="mt-2 mb-1 fw-bold">Una Película De Minecraft</h6>
+                        <h6 class="mt-2 mb-1 fw-bold">La forma del agua</h6>
                         <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
                     </div>
                 </div>
@@ -166,11 +167,11 @@
 
             <div class="col">
                 <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/rescate.jpg" class="card-img-top" alt="Rescate Implacable">
+                    <img src="img/martian.jpg" class="card-img-top" alt="Rescate Implacable">
                     <div class="card-body">
-                        <span class="badge bg-warning text-dark">B15</span> 116 min
+                        <span class="badge bg-warning text-dark">B</span> 170 min
                         <span class="badge bg-primary float-end">Estreno</span>
-                        <h6 class="mt-2 mb-1 fw-bold">Rescate Implacable</h6>
+                        <h6 class="mt-2 mb-1 fw-bold">The martian</h6>
                         <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
                     </div>
                 </div>
@@ -178,11 +179,11 @@
 
             <div class="col">
                 <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/memo.jpeg" class="card-img-top" alt="Memorias De Un Caracol">
+                    <img src="img/monta.jpeg" class="card-img-top" alt="Memorias De Un Caracol">
                     <div class="card-body">
-                        <span class="badge bg-warning text-dark">B</span> 95 min
+                        <span class="badge bg-warning text-dark">C</span> 180 min
                         <span class="badge bg-success float-end">Nominadas</span>
-                        <h6 class="mt-2 mb-1 fw-bold">Memorias De Un Caracol</h6>
+                        <h6 class="mt-2 mb-1 fw-bold">En las montañas de la locura</h6>
                         <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
                     </div>
                 </div>
@@ -190,78 +191,17 @@
 
             <div class="col">
                 <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/petter.jpeg" class="card-img-top" alt="Peter Pan">
+                    <img src="img/nov.jpg" class="card-img-top" alt="Peter Pan">
                     <div class="card-body">
-                        <span class="badge bg-warning text-dark">C</span> 89 min
+                        <span class="badge bg-warning text-dark">D</span> 180 min
                         <span class="badge bg-primary float-end">Estreno</span>
-                        <h6 class="mt-2 mb-1 fw-bold">Peter Pan: Pesadilla En La Tierra Del Nunca Jamás</h6>
+                        <h6 class="mt-2 mb-1 fw-bold">Sin novedad en el frente</h6>
                         <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/1938.jpg" class="card-img-top" alt="Blanca Nieves">
-                    <div class="card-body">
-                        <span class="badge bg-success">A</span> 100 min
-                        <span class="badge bg-primary float-end">Estreno</span>
-                        <h6 class="mt-2 mb-1 fw-bold">1938 Cuando El Petróleo Fue
-                            Nuestro</h6>
-                        <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/cap.jpeg" class="card-img-top" alt="Peter Pan">
-                    <div class="card-body">
-                        <span class="badge bg-warning text-dark">B</span> 118 min
-                        <span class="badge bg-primary float-end">Estreno</span>
-                        <h6 class="mt-2 mb-1 fw-bold">Capitán América: Un Nuevo
-                            Mundo</h6>
-                        <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/the.jpg" class="card-img-top" alt="Minecraft">
-                    <div class="card-body">
-                        <span class="badge bg-secondary">TBC</span> 125 min
-                        <span class="badge bg-info float-end">Preventa</span>
-                        <h6 class="mt-2 mb-1 fw-bold">The Chosen La Última Cena</h6>
-                        <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/perdida.jpg" class="card-img-top" alt="Peter Pan">
-                    <div class="card-body">
-                        <span class="badge bg-warning text-dark">B15</span> 98 min
-                        <span class="badge bg-primary float-end">Estreno</span>
-                        <h6 class="mt-2 mb-1 fw-bold">Pérdida Total</h6>
-                        <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/sofia.jpeg" class="card-img-top" alt="Peter Pan">
-                    <div class="card-body">
-                        <span class="badge bg-warning text-dark">B15</span> 106 min
-                        <span class="badge bg-primary float-end">Estreno</span>
-                        <h6 class="mt-2 mb-1 fw-bold">Qué Huevos, Sofía</h6>
-                        <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
-
+         
             <!-- menu trad. -->
             <div class="menu-section d-flex align-items-center" style="width: 100vw; height: 100vh; background: linear-gradient(to right, #ffffff 50%, #4c43cd 50%); border-radius: 30px;">
                 <div class="container">
