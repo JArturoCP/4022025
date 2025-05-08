@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Director;
+use App\Models\Producto;
+use App\Models\Protagonistas;
 use Illuminate\Http\Request;
 
 class DirectorController extends Controller
@@ -13,10 +15,10 @@ class DirectorController extends Controller
     public function index()
     {
         //
-        $directores = Director::join('personas','directores.id_persona', '=', 'personas.id_personas')
-        ->get();
-        // dd($ciudades);
-
+        $directores = Director::join('personas', 'personas.id_personas', '=', 'directores.id_persona')
+            ->select('personas.nombre', 'personas.ap', 'personas.am', 'directores.*')
+            ->get();
+        
 
         return view('directores.index', compact('directores'));
     }
@@ -35,13 +37,24 @@ class DirectorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre_director' => 'required|max:10',
-        ], [], [
-            'nombre_director' => 'Nombre del director',
+            'id_persona' => 'required|exists:personas,id_personas',
         ]);
-        Director::create($request->all());
+
+        $director=Director::create([
+            'id_persona'=>$request->id_persona,
+            'img_director'=>$request->img_director
+        ]);
+
+        if ($request->hasFile('img_director')) {
+            $filePath = $request->file('img_director')->store('uploads', 'public');
+        }
+
+        $director->img_director = $filePath;
+        $director->save();
+
         return redirect()->route('director.index')->with('success', 'Director creado correctamente.');
     }
+
 
     /**
      * Display the specified resource.
@@ -62,14 +75,26 @@ class DirectorController extends Controller
     public function update(Request $request, Director $director)
     {
         $request->validate([
-            'nombre_director' => 'required|max:10',
-        ], [], [
-            'nombre_director' => 'Nombre del director',
+            'id_persona' => 'required|exists:personas,id_personas',
         ]);
-        //
-        $director->update($request->all());
 
-        return redirect()->route('director.index')->with('success', 'Director editado correctamente.');
+        $director->id_persona = $request->id_persona;
+
+        if ($request->hasFile('img_director')) {
+            if ($director->img_director) {
+                $oldImagePath = storage_path('app/public/' . $director->img_director);
+
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);  // Eliminar la imagen anterior
+                }
+            }
+            $newImagePath = $request->file('img_director')->store('uploads', 'public');
+            $director->img_director = $newImagePath;
+        }
+
+        $director->save();
+
+        return redirect()->route('director.index')->with('success', 'Director actualizado correctamente');
     }
 
     /**

@@ -30,11 +30,14 @@
 
 <div class="row justify-content-center mt-5">
     <div class="col-6">
-        <form action="{{ route('director.store') }}" method="POST">
+        <form action="{{ route('director.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre del director</label>
-                <input type="text" class="form-control" id="nombre" name="nombre_director" aria-describedby="emailHelp" value="{{ old('nombre_director') }}">
+                <label for="id_persona" class="form-label">Identificador del director</label>
+                <input type="text" class="form-control" id="id_persona" name="id_persona" value="{{ old('id_persona') }}">
+
+                <label for="img_director" class="form-label">Imagen del Director</label>
+                <input type="file" class="form-control" id="img_director" name="img_director" accept="image/*">
             </div>
 
             <button type="submit" class="btn btn-primary">Guardar</button>

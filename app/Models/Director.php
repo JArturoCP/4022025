@@ -12,5 +12,5 @@ class Director extends Model
 
     protected $table = 'directores';
     protected $primaryKey = 'id_director';
-    protected $fillable = ['nombre_director'];
+    protected $fillable = ['id_persona','img_director'];
 }

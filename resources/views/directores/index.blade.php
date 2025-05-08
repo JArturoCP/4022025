@@ -29,6 +29,8 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido paterno</th>
                     <th scope="col">Apellido materno</th>
+                    <th scope="col">Foto de Director</th>
+                    <th scope="col">Acciones</th>
                     
                 </tr>
             </thead>
@@ -39,6 +41,14 @@
                     <td>{{ $director->nombre }}</td>
                     <td>{{ $director->ap }}</td>
                     <td>{{ $director->am}}</td>
+                    <td>
+                        @if($director->img_director) <!-- Verificar si hay imagen -->
+                        <img src="{{ asset('storage/' . $director->img_director) }}" alt="Imagen del director" width="100" height="100">
+                        @else
+                            <span>No disponible</span> <!-- Si no hay imagen -->
+                        @endif
+                    </td>
+
                     <td>
                         <a class="btn btn-warning" href="{{ route('director.edit', $director->id_director) }}">Editar</a>
                         <form action="{{ route('director.destroy', $director->id_director) }}" method="POST" style="display:inline;">
