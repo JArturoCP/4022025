@@ -26,7 +26,7 @@ class AsignaCarteleraController extends Controller
         $asigna_cartelera = AsignaCartelera::join('peliculas', 'peliculas.id_pelicula', '=', 'asigna_cartelera.id_pelicula')
         ->join('cines', 'cines.id_cine', '=', 'asigna_cartelera.id_cine')
         ->join('dias', 'dias.id_dia', '=', 'asigna_cartelera.id_dia')
-        ->join('horas', 'horas.id_hora', '=', 'asigna_cartelera.id_hora') // Cambié id_hora por id_horas
+        ->join('horas', 'horas.id_hora', '=', 'asigna_cartelera.id_hora') 
         ->join('proyecciones', 'proyecciones.id_proyeccion', '=', 'asigna_cartelera.id_proyeccion')
         ->select('asigna_cartelera.*', 'peliculas.titulo', 'cines.nombre_c', 'dias.desc_dia', 'horas.descripcion_h', 'proyecciones.desc_proy')
         ->orderBy('asigna_cartelera.id_asigna', 'asc')
@@ -43,7 +43,7 @@ class AsignaCarteleraController extends Controller
     public function create()
     {
         // Cargar datos necesarios (como películas, cines, días, horas, proyecciones)
-        $peliculas = Pelicula::all();  // Asegúrate de tener modelos cargados
+        $peliculas = Pelicula::all(); 
         $cines = Cine::all();
         $dias = Dia::all();
         $horas = Hora::all();

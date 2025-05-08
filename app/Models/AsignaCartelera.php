@@ -20,7 +20,7 @@ class AsignaCartelera extends Model
         'id_proyeccion',
         'fi',
         'ff',
-    ]; // Campos que se pueden asignar masivamente
+    ]; 
 
 }
 
