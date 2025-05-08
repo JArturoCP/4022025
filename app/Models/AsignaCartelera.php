@@ -10,7 +10,7 @@ class AsignaCartelera extends Model
     use HasFactory;
 
     protected $table = 'asigna_cartelera'; // Nombre de la tabla en la base de datos
-    protected $primaryKey = 'id_asignac'; // Clave primaria
+    protected $primaryKey = 'id_asigna'; // Clave primaria
 
     protected $fillable = [
         'id_pelicula',

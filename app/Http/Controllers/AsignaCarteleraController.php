@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\AsignaCartelera;
 use App\Models\Pelicula; // Importamos el modelo Pelicula
 use App\Models\Cine;
@@ -25,9 +26,10 @@ class AsignaCarteleraController extends Controller
         $asigna_cartelera = AsignaCartelera::join('peliculas', 'peliculas.id_pelicula', '=', 'asigna_cartelera.id_pelicula')
         ->join('cines', 'cines.id_cine', '=', 'asigna_cartelera.id_cine')
         ->join('dias', 'dias.id_dia', '=', 'asigna_cartelera.id_dia')
-        ->join('horas', 'horas.id_horas', '=', 'asigna_cartelera.id_horas') // Cambié id_hora por id_horas
+        ->join('horas', 'horas.id_hora', '=', 'asigna_cartelera.id_hora') // Cambié id_hora por id_horas
         ->join('proyecciones', 'proyecciones.id_proyeccion', '=', 'asigna_cartelera.id_proyeccion')
-        ->select('asigna_cartelera.*', 'peliculas.titulo', 'cines.nombre_c', 'dias.desc_dia', 'horas.descripcion_h', 'proyecciones.des_proy')
+        ->select('asigna_cartelera.*', 'peliculas.titulo', 'cines.nombre_c', 'dias.desc_dia', 'horas.descripcion_h', 'proyecciones.desc_proy')
+        ->orderBy('asigna_cartelera.id_asigna', 'asc')
         ->get();
 
 
@@ -88,7 +90,7 @@ class AsignaCarteleraController extends Controller
     public function edit($id)
     {
         // Buscar el registro a editar
-        $asignaCartelera = AsignaCartelera::findOrFail($id);
+        $asigna_cartelera = AsignaCartelera::findOrFail($id);
 
         // Cargar datos necesarios
         $peliculas = Pelicula::all();
@@ -97,7 +99,7 @@ class AsignaCarteleraController extends Controller
         $horas = Hora::all();
         $proyecciones = Proyeccion::all();
 
-        return view('asigna_cartelera.edit', compact('asignaCartelera', 'peliculas', 'cines', 'dias', 'horas', 'proyecciones'));
+        return view('asigna_cartelera.edit', compact('asigna_cartelera', 'peliculas', 'cines', 'dias', 'horas', 'proyecciones'));
     }
 
 
@@ -118,8 +120,8 @@ class AsignaCarteleraController extends Controller
         ]);
 
         // Encontrar el registro a actualizar
-        $asignaCartelera = AsignaCartelera::findOrFail($id);
-        $asignaCartelera->update($request->all());
+        $asigna_cartelera = AsignaCartelera::findOrFail($id);
+        $asigna_cartelera->update($request->all());
 
         return redirect()->route('asigna_cartelera.index')->with('success', 'Cartelera actualizada correctamente.');
     }

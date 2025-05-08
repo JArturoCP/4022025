@@ -30,7 +30,7 @@ class ProyeccionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'des_proy' => 'required|string|max:200',
+            'desc_proy' => 'required|string|max:200',
             'precio' => 'required|numeric',
         ]);
 
@@ -65,7 +65,7 @@ class ProyeccionController extends Controller
     {
         // Validaciones
         $validated = $request->validate([
-            'des_proy' => 'required|string|max:255|unique:proyecciones,des_proy,' . $id_proyeccion . ',id_proyeccion', // Valida que la descripción sea única, excepto el registro actual
+            'desc_proy' => 'required|string|max:255|unique:proyecciones,desc_proy,' . $id_proyeccion . ',id_proyeccion', // Valida que la descripción sea única, excepto el registro actual
             'precio' => 'required|numeric|min:0', // Valida que el precio sea un número y mayor o igual a 0
         ]);
 
@@ -73,7 +73,7 @@ class ProyeccionController extends Controller
         $proyeccion = Proyeccion::findOrFail($id_proyeccion);
 
         // Actualizar los campos
-        $proyeccion->des_proy = $request->des_proy;
+        $proyeccion->desc_proy = $request->desc_proy;
         $proyeccion->precio = $request->precio;
         $proyeccion->save();
 

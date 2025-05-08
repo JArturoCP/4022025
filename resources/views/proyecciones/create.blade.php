@@ -17,8 +17,8 @@
             <form action="{{ route('proyecciones.store') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="des_proy" class="form-label">Descripción</label>
-                    <input type="text" class="form-control" id="des_proy" name="des_proy" required>
+                    <label for="desc_proy" class="form-label">Descripción</label>
+                    <input type="text" class="form-control" id="desc_proy" name="desc_proy" required>
                 </div>
                 
                 <div class="mb-3">

@@ -13,5 +13,5 @@ class Proyeccion extends Model
     protected $table = 'proyecciones';
     protected $primaryKey = 'id_proyeccion';
     public $timestamps = false;
-    protected $fillable = ['des_proy', 'precio'];
+    protected $fillable = ['desc_proy', 'precio'];
 }

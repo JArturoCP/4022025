@@ -38,7 +38,7 @@
             <label for="id_hora" class="form-label">Hora</label>
             <select name="id_hora" id="id_hora" class="form-control">
                 @foreach($horas as $hora)
-                    <option value="{{ $hora->id_horas }}">{{ $hora->descripcion_h }}</option>
+                    <option value="{{ $hora->id_hora }}">{{ $hora->descripcion_h }}</option>
                 @endforeach
             </select>
         </div>
@@ -47,7 +47,7 @@
             <label for="id_proyeccion" class="form-label">Proyección</label>
             <select name="id_proyeccion" id="id_proyeccion" class="form-control">
                 @foreach($proyecciones as $proyeccion)
-                    <option value="{{ $proyeccion->id_proyeccion }}">{{ $proyeccion->des_proy }}</option>
+                    <option value="{{ $proyeccion->id_proyeccion }}">{{ $proyeccion->desc_proy }}</option>
                 @endforeach
             </select>
         </div>

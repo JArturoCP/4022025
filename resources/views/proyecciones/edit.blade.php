@@ -23,8 +23,8 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-                    <label for="des_proy" class="form-label">Descripción de la proyección</label>
-                    <input type="text" class="form-control" id="des_proy" name="des_proy" value="{{ $proyeccion->des_proy }}" required>
+                    <label for="desc_proy" class="form-label">Descripción de la proyección</label>
+                    <input type="text" class="form-control" id="desc_proy" name="desc_proy" value="{{ $proyeccion->desc_proy }}" required>
                     
                     <label for="precio" class="form-label">Precio</label>
                     <input type="text" class="form-control" id="precio" name="precio" value="{{ $proyeccion->precio }}" required>
