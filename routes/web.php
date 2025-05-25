@@ -7,9 +7,13 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 
+use App\Models\Pelicula;
+
 Route::get('/', function () {
-    return view('landing/cines');
+    $peliculas = Pelicula::with(['genero', 'clasificacion', 'idioma', 'director'])->get();
+    return view('landing.cines', compact('peliculas'));
 });
+
 
 Auth::routes();
 
@@ -44,6 +48,10 @@ Route::resource('asigna_cartelera', App\Http\Controllers\AsignaCarteleraControll
 Route::resource('cine', App\Http\Controllers\CineController::class);
 
 Route::resource('peliculas', App\Http\Controllers\PeliculaController::class);
+
+use App\Http\Controllers\PeliculaController;
+
+Route::get('/pelicula/{id}', [PeliculaController::class, 'show'])->name('peliculas.show');
 
 Route::get("cesar", function () {
     return view('cesar');
