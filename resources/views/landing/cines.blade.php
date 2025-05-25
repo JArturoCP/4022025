@@ -141,67 +141,23 @@
         <h2 class="mb-4 text-center fw-bold">🎥 Cartelera</h2>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
 
-            <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/duro.jpeg" class="card-img-top" alt="Blanca Nieves">
-                    <div class="card-body">
-                    <span class="badge bg-warning text-dark">B15</span> 150 min
-                        <span class="badge bg-primary float-end">Estreno</span>
-                        <h6 class="mt-2 mb-1 fw-bold">Duro de matar</h6>
-                        <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
+            @foreach($peliculas as $pelicula)
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="{{ asset('img/' . $pelicula->imagen) }}" class="card-img-top" alt="{{ $pelicula->titulo }}">
+                        <div class="card-body">
+                            <span class="badge bg-secondary">{{ $pelicula->clasificacion?->nombre ?? 'TBC' }}</span>
+                            {{ $pelicula->duracion }} min
+                            <span class="badge bg-info float-end">Preventa</span>
+                            <h6 class="mt-2 mb-1 fw-bold">{{ $pelicula->titulo }}</h6>
+                            <a href="{{ route('peliculas.show', $pelicula->id_pelicula) }}" class="text-decoration-none text-primary small">
+                                Ver detalle
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
 
-            <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/forma.jpg" class="card-img-top" alt="Minecraft">
-                    <div class="card-body">
-                        <span class="badge bg-secondary">TBC</span> 180 min
-                        <span class="badge bg-info float-end">Preventa</span>
-                        <h6 class="mt-2 mb-1 fw-bold">La forma del agua</h6>
-                        <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/martian.jpg" class="card-img-top" alt="Rescate Implacable">
-                    <div class="card-body">
-                        <span class="badge bg-warning text-dark">B</span> 170 min
-                        <span class="badge bg-primary float-end">Estreno</span>
-                        <h6 class="mt-2 mb-1 fw-bold">The martian</h6>
-                        <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/monta.jpeg" class="card-img-top" alt="Memorias De Un Caracol">
-                    <div class="card-body">
-                        <span class="badge bg-warning text-dark">C</span> 180 min
-                        <span class="badge bg-success float-end">Nominadas</span>
-                        <h6 class="mt-2 mb-1 fw-bold">En las montañas de la locura</h6>
-                        <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="img/nov.jpg" class="card-img-top" alt="Peter Pan">
-                    <div class="card-body">
-                        <span class="badge bg-warning text-dark">D</span> 180 min
-                        <span class="badge bg-primary float-end">Estreno</span>
-                        <h6 class="mt-2 mb-1 fw-bold">Sin novedad en el frente</h6>
-                        <a href="#" class="text-decoration-none text-primary small">Ver detalle</a>
-                    </div>
-                </div>
-            </div>
-
-         
             <!-- menu trad. -->
             <div class="menu-section d-flex align-items-center" style="width: 100vw; height: 100vh; background: linear-gradient(to right, #ffffff 50%, #4c43cd 50%); border-radius: 30px;">
                 <div class="container">
