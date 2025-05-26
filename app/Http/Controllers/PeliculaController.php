@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pelicula;
 use Illuminate\Http\Request;
+use App\Models\Pelicula;
 
 class PeliculaController extends Controller
 {
@@ -12,16 +12,10 @@ class PeliculaController extends Controller
      */
     public function index()
     {
-        $peliculas = Pelicula::join('clasificacion', 'clasificacion.id_clasificacion', '=', 'peliculas.id_clasificacion')
-            ->join('genero', 'genero.id_genero', '=', 'peliculas.id_genero')
-            ->join('idioma', 'idioma.id_idioma', '=', 'peliculas.id_idioma')
-            ->join('directores', 'directores.id_director', '=', 'peliculas.id_director')
-            ->join('personas', 'personas.id_personas', '=', 'directores.id_persona') // Corregido el campo id_personas
-            ->select('peliculas.*', 'genero.desc_gen', 'idioma.desc_idioma', 'personas.nombre', 'personas.ap', 'personas.am')
-            ->get();
-        //dd($peliculas);
+        $peliculas = Pelicula::with(['genero', 'clasificacion', 'idioma', 'director'])->get();
         return view('peliculasViews.dashPeliculas', compact('peliculas'));
     }
+
 
 
     /**
@@ -44,15 +38,15 @@ class PeliculaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Pelicula $peliculas)
+    public function show($id)
     {
-        //
+        $pelicula = Pelicula::with(['genero', 'clasificacion', 'idioma', 'director'])->findOrFail($id);
+        return view('peliculasViews.show', compact('pelicula'));
     }
-
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pelicula $peliculas)
+    public function edit(Pelicula $pelicula)
     {
         //
     }
@@ -60,7 +54,7 @@ class PeliculaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pelicula $peliculas)
+    public function update(Request $request, Pelicula $pelicula)
     {
         //
     }
@@ -68,7 +62,7 @@ class PeliculaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pelicula $peliculas)
+    public function destroy(Pelicula $pelicula)
     {
         //
     }
